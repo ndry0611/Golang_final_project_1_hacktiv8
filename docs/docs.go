@@ -71,6 +71,36 @@ const docTemplate = `{
             }
         },
         "/todos/{todoId}": {
+            "get": {
+                "description": "Get todo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Todos"
+                ],
+                "operationId": "get-todo",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID of the todo",
+                        "name": "todoId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/dto.NewTodoResponse"
+                        }
+                    }
+                }
+            },
             "put": {
                 "description": "Update a todo list",
                 "consumes": [
@@ -122,38 +152,6 @@ const docTemplate = `{
                     "Todos"
                 ],
                 "operationId": "delete-todo",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "ID of the todo",
-                        "name": "todoId",
-                        "in": "path",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/dto.NewTodoResponse"
-                        }
-                    }
-                }
-            }
-        },
-        "/todos{todoId}": {
-            "get": {
-                "description": "Get todo",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Todos"
-                ],
-                "operationId": "get-todo",
                 "parameters": [
                     {
                         "type": "integer",

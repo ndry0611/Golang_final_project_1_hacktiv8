@@ -76,6 +76,26 @@ paths:
             $ref: '#/definitions/dto.NewTodoResponse'
       tags:
       - Todos
+    get:
+      consumes:
+      - application/json
+      description: Get todo
+      operationId: get-todo
+      parameters:
+      - description: ID of the todo
+        in: path
+        name: todoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.NewTodoResponse'
+      tags:
+      - Todos
     put:
       consumes:
       - application/json
@@ -93,27 +113,6 @@ paths:
         required: true
         schema:
           $ref: '#/definitions/dto.NewTodoRequest'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/dto.NewTodoResponse'
-      tags:
-      - Todos
-  /todos{todoId}:
-    get:
-      consumes:
-      - application/json
-      description: Get todo
-      operationId: get-todo
-      parameters:
-      - description: ID of the todo
-        in: path
-        name: todoId
-        required: true
-        type: integer
       produces:
       - application/json
       responses:
