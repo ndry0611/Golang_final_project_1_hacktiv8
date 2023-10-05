@@ -27,7 +27,7 @@ func StartApp() {
 	//Swagger
 	docs.SwaggerInfo.Title = "Final Project 1 Kelompok 3"
 	docs.SwaggerInfo.Description = "Todos API"
-	docs.SwaggerInfo.Version = "1.0"
+	docs.SwaggerInfo.Version = "2.0"
 	docs.SwaggerInfo.Host = "localhost:" + config.GetAppConfig().Port
 	docs.SwaggerInfo.Schemes = []string{"http"}
 	route.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
