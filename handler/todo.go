@@ -43,7 +43,7 @@ func (th *todoHandler) GetTodos(ctx *gin.Context) {
 // @Produce json
 // @Param todoId path int true "ID of the todo"
 // @Success 200 {object} dto.NewTodoResponse
-// @Router /todos{todoId} [get]
+// @Router /todos/{todoId} [get]
 func (th *todoHandler) GetTodo(ctx *gin.Context) {
 	params, _ := strconv.Atoi(ctx.Param("todoId"))
 
